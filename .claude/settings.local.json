@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm --version)",
+      "Bash(git --version)",
+      "Bash(pnpm install *)",
+      "Bash(pnpm approve-builds *)",
+      "Bash(NODE_TLS_REJECT_UNAUTHORIZED=0 pnpm install *)",
+      "Bash(node -e \"const {createRequire} = require\\('module'\\); const r = createRequire\\(import.meta.url || __filename\\); console.log\\('ok'\\)\")",
+      "Bash(pnpm run *)",
+      "Bash(npm *)",
+      "Bash(NODE_TLS_REJECT_UNAUTHORIZED=0 npm install --legacy-peer-deps)",
+      "Bash(grep -E \"^next$|^react$|^zod$|^tsup$|^vitest$|^uuid$\")"
+    ]
+  }
+}

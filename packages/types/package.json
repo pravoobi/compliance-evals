@@ -1,0 +1,34 @@
+{
+  "name": "@compliance-evals/types",
+  "version": "0.1.0",
+  "description": "Shared data model for compliance-evals",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "uuid": "^11.1.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "vitest": "^3.0.5"
+  }
+}
