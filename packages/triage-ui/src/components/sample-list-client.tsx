@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import type { EvalResult, Sample } from "@compliance-evals/types";
 import { Badge } from "@compliance-evals/ui";
@@ -39,6 +39,7 @@ const VERDICT_ORDER = { fail: 0, warn: 1, pass: 2, null: 3 } as const;
 export function SampleListClient({ rows }: { rows: Row[] }) {
   const [filter, setFilter] = useState<"all" | "fail" | "warn" | "pass">("all");
   const [selected, setSelected] = useState(0);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const filtered = rows.filter((r) => {
     if (filter === "all") return true;
@@ -47,6 +48,9 @@ export function SampleListClient({ rows }: { rows: Row[] }) {
 
   const handleKey = useCallback(
     (e: KeyboardEvent) => {
+      // Ignore if user is typing in an input
+      const tag = (e.target as HTMLElement).tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
       if (e.key === "ArrowDown" || e.key === "j") {
         e.preventDefault();
         setSelected((p) => Math.min(p + 1, filtered.length - 1));
@@ -62,9 +66,14 @@ export function SampleListClient({ rows }: { rows: Row[] }) {
   );
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
   }, [handleKey]);
+
+  // Auto-focus the grid on mount so arrow keys work without clicking first
+  useEffect(() => {
+    gridRef.current?.focus();
+  }, []);
 
   return (
     <div>
@@ -98,9 +107,11 @@ export function SampleListClient({ rows }: { rows: Row[] }) {
       </div>
 
       <div
+        ref={gridRef}
         role="grid"
         aria-label="Sample list"
-        className="border border-slate-200 rounded-lg overflow-hidden"
+        tabIndex={0}
+        className="border border-slate-200 rounded-lg overflow-hidden outline-none"
       >
         <div
           role="row"
