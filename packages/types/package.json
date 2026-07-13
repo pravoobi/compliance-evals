@@ -1,6 +1,6 @@
 {
   "name": "@compliance-evals/types",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Shared data model for compliance-evals",
   "license": "MIT",
   "type": "module",

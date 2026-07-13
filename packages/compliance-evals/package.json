@@ -1,6 +1,6 @@
 {
   "name": "@compliance-evals/core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Compliance-native evaluation library for LLM applications",
   "license": "MIT",
   "type": "module",
