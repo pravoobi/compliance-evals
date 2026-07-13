@@ -34,6 +34,9 @@ export default function RootLayout({
             <a href="/issues" className="text-slate-600 hover:text-slate-900">
               Issues
             </a>
+            <a href="/meta-eval" className="text-slate-600 hover:text-slate-900">
+              Meta-eval
+            </a>
           </nav>
         </header>
         <main id="main-content" className="max-w-7xl mx-auto px-6 py-6">
