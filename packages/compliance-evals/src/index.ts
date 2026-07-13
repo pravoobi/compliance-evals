@@ -31,3 +31,5 @@ export type {
   IssueOutcome,
 } from "./regression/runner.js";
 export { MissingCredentialsError, TamperDetectedError } from "./errors.js";
+export { AutoCurator } from "./curation/curator.js";
+export type { FailureCluster, CurationReport } from "./curation/curator.js";
