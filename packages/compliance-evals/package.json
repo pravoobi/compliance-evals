@@ -42,5 +42,8 @@
     "@anthropic-ai/sdk": {
       "optional": true
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
