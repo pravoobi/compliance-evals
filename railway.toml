@@ -1,0 +1,7 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "packages/triage-ui/Dockerfile"
+
+[deploy]
+healthcheckPath = "/"
+restartPolicyType = "on_failure"
