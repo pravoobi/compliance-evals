@@ -1,0 +1,11 @@
+.git
+.claude
+*.md
+node_modules
+packages/*/node_modules
+packages/*/.next
+packages/*/dist
+packages/*/data
+packages/triage-ui/scripts
+**/*.test.ts
+**/*.spec.ts
