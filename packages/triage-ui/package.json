@@ -10,9 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@compliance-evals/core": "^0.1.0",
-    "@compliance-evals/types": "^0.1.0",
-    "@compliance-evals/ui": "^0.1.0",
+    "@compliance-evals/core": "workspace:*",
+    "@compliance-evals/types": "workspace:*",
+    "@compliance-evals/ui": "workspace:*",
     "next": "^15.5.20",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
