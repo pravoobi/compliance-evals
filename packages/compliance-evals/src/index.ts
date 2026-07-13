@@ -5,6 +5,12 @@ export {
   AnthropicGroundednessEvaluator,
   createGroundednessEvaluator,
 } from "./evaluators/groundedness.js";
+export {
+  DeterministicAdviceBoundaryEvaluator,
+  AnthropicAdviceBoundaryEvaluator,
+  createAdviceBoundaryEvaluator,
+} from "./evaluators/advice-boundary.js";
+export type { AdviceBoundaryConfig, AdviceBoundaryPattern } from "./evaluators/advice-boundary.js";
 export type { AuditStore } from "./store/audit-store.js";
 export {
   SqliteAuditStore,

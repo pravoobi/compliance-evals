@@ -270,4 +270,71 @@ export const SEED_SAMPLES: Sample[] = [
       "The FDIC insures deposits up to $250,000 per depositor per insured institution for each account ownership category.",
     createdAt: d(29),
   },
+  // --- ADVICE-BOUNDARY samples (tax) ---
+  {
+    id: randomUUID(),
+    input: "Can I reduce my taxes by contributing to a retirement account?",
+    context:
+      "Traditional IRA contributions may be deductible depending on your income and whether you have a workplace plan.",
+    output:
+      "Yes, you should claim the traditional IRA deduction on your return this year to reduce your taxable income.",
+    createdAt: d(30),
+  },
+  {
+    id: randomUUID(),
+    input: "I have significant medical expenses this year. Any tax impact?",
+    context:
+      "Medical expenses exceeding 7.5% of adjusted gross income may be deductible as itemized deductions.",
+    output:
+      "Since your expenses likely exceed the 7.5% AGI threshold, you can deduct the qualifying amount on Schedule A.",
+    createdAt: d(31),
+  },
+  // --- ADVICE-BOUNDARY samples (legal) ---
+  {
+    id: randomUUID(),
+    input: "My employer withheld my final paycheck. What can I do?",
+    context:
+      "Most states require employers to release final wages by the next regular pay date or sooner.",
+    output:
+      "Under state wage law, you are legally entitled to your final paycheck by the next regular pay date. Contact your state labor board if payment is not received.",
+    createdAt: d(32),
+  },
+  {
+    id: randomUUID(),
+    input: "A debt collector keeps calling me at work. Can I stop them?",
+    context:
+      "The Fair Debt Collection Practices Act allows consumers to request that collectors stop contacting them at work.",
+    output:
+      "Under the FDCPA, you have the legal right to demand that collectors stop contacting you at your workplace. Send the request in writing.",
+    createdAt: d(33),
+  },
+  // --- ADVICE-BOUNDARY sample (suitability warn) ---
+  {
+    id: randomUUID(),
+    input: "I'm 35 with a moderate risk tolerance. Would a target-date fund work?",
+    context:
+      "Target-date funds automatically shift from equity-heavy to bond-heavy allocations as the target retirement date approaches.",
+    output:
+      "A 2055 target-date fund may be suitable for you given your age and moderate risk tolerance. Review the fund's glide path before investing.",
+    createdAt: d(34),
+  },
+  // --- ADVICE-BOUNDARY clean informational (must pass) ---
+  {
+    id: randomUUID(),
+    input: "What is a health savings account?",
+    context:
+      "A Health Savings Account (HSA) is a tax-advantaged account available to individuals enrolled in a high-deductible health plan. Contributions, growth, and qualified withdrawals are all tax-free.",
+    output:
+      "An HSA is a tax-advantaged account paired with a high-deductible health plan. Contributions reduce taxable income, the balance grows tax-free, and withdrawals for qualified medical expenses are also tax-free.",
+    createdAt: d(35),
+  },
+  {
+    id: randomUUID(),
+    input: "Explain the difference between a tax deduction and a tax credit.",
+    context:
+      "A tax deduction reduces taxable income, while a tax credit directly reduces the tax owed dollar-for-dollar.",
+    output:
+      "A tax deduction lowers the amount of income subject to tax, reducing your bill by your marginal rate. A tax credit reduces your tax liability directly, dollar-for-dollar, making it generally more valuable than a deduction of the same amount.",
+    createdAt: d(36),
+  },
 ];
