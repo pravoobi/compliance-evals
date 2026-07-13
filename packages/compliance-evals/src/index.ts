@@ -23,4 +23,11 @@ export {
   verifySignedExport,
 } from "./export/evidence.js";
 export type { EvidenceBundle, SignedEvidenceExport } from "./export/evidence.js";
+export { RegressionRunner } from "./regression/runner.js";
+export type {
+  RegressionReport,
+  IssueCheckResult,
+  SampleCheckResult,
+  IssueOutcome,
+} from "./regression/runner.js";
 export { MissingCredentialsError, TamperDetectedError } from "./errors.js";
