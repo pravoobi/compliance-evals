@@ -14,7 +14,7 @@ FROM base AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN npm install -g pnpm && pnpm build
+RUN npm install -g pnpm && pnpm build && mkdir -p packages/triage-ui/public
 
 FROM base AS runner
 WORKDIR /app
@@ -23,7 +23,7 @@ RUN addgroup --system --gid 1001 nodejs && adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/packages/triage-ui/.next/standalone ./
 COPY --from=builder /app/packages/triage-ui/.next/static ./packages/triage-ui/.next/static
-COPY --from=builder /app/packages/triage-ui/public ./packages/triage-ui/public 2>/dev/null || true
+COPY --from=builder /app/packages/triage-ui/public ./packages/triage-ui/public
 
 RUN mkdir -p /app/data && chown -R nextjs:nodejs /app/data
 USER nextjs
