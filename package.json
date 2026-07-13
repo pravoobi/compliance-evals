@@ -19,7 +19,7 @@
     "eslint": "^9.18.0"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.5.0"
   },
   "packageManager": "pnpm@11.4.0"
 }
