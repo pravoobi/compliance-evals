@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   serverExternalPackages: ["@compliance-evals/core"],
   webpack(config, { isServer }) {
     if (isServer) {
