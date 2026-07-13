@@ -3,5 +3,6 @@ builder = "dockerfile"
 dockerfilePath = "packages/triage-ui/Dockerfile"
 
 [deploy]
+startCommand = "node packages/triage-ui/server.js"
 healthcheckPath = "/"
 restartPolicyType = "on_failure"
